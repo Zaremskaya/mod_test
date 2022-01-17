@@ -46,6 +46,9 @@
             <configuration>
             			 <outputEncoding>UTF-8</outputEncoding>
             		<inputEncoding>UTF-8</inputEncoding>
+            		<groups>positive</groups>
+                    <groups>negative</groups>
+                    <excludedGroups>negative</excludedGroups>
           </configuration>
           
           </plugin>
@@ -58,8 +61,7 @@
                 <configuration>
                     <outputEncoding>UTF-8</outputEncoding>
                     <inputEncoding>UTF-8</inputEncoding>
- 
-         
+                             
                 </configuration>
             </plugin>
                            

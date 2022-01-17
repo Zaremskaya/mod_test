@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: StudentTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in StudentTest
+Tests run: 13, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! - in StudentTest
+testAge50  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <50> but was: <18>
+	at StudentTest.testAge50(StudentTest.java:44)
+
