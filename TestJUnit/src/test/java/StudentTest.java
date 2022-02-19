@@ -5,8 +5,10 @@ import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
-
+@Execution(ExecutionMode.CONCURRENT)
 public class StudentTest {
 	
 	private static final Class<?>[] Age = null;
@@ -67,9 +69,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testLastName() {
-			String fio = "Петров-Иванов";
+			String fio = "пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setLastName(fio);
-			String expectedName = "Петров-Иванов";
+			String expectedName = "пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getLastName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -77,9 +79,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testLastName1() {
-			String fio = "петров";
+			String fio = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setLastName(fio);
-			String expectedName = "Петров";
+			String expectedName = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getLastName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -87,9 +89,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testLastName2() {
-			String fio = "пеТРов";
+			String fio = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setLastName(fio);
-			String expectedName = "Петров";
+			String expectedName = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getLastName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -97,9 +99,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("negative")
 	  void testLastName3() {
-			String fio = " пеТРов";
+			String fio = " пїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setLastName(fio);
-			String expectedName = " Петров";
+			String expectedName = " пїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getLastName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -107,9 +109,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("negative")
 	  void testLastName4() {
-			String fio = "3пеТРов";
+			String fio = "3пїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setLastName(fio);
-			String expectedName = "3Петров";
+			String expectedName = "3пїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getLastName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -117,9 +119,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testFirstName() {
-			String name = "валентина";
+			String name = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setFirstName(name);
-			String expectedName = "Валентина";
+			String expectedName = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getFirstName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -127,9 +129,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testFirstName1() {
-			String name = "валеНТина";
+			String name = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setFirstName(name);
-			String expectedName = "Валентина";
+			String expectedName = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getFirstName();
 		    assertEquals(expectedName, actualsName);	
 		  }
@@ -137,9 +139,9 @@ public class StudentTest {
 	  @Test
 	  @Tag("positive")
 	  void testFirstName2() {
-			String name = "Алла-Виктория";
+			String name = "пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			s.setFirstName(name);
-			String expectedName = "Алла-Виктория";
+			String expectedName = "пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			String actualsName=s.getFirstName();
 		    assertEquals(expectedName, actualsName);	
 		  }
