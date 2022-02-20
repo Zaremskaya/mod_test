@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestNGFactory (20 февр. 2022 г. 15:08:07)</a> &gt; <a href="../../index.html" class="el_group">TestJUnit</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">TestNG.java</span></div><h1>TestNG.java</h1><pre class="source lang-java linenums">import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+//import online_tusur.unit_online_tusur.Student;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+//import java.util.ArrayList;
+
+import org.testng.annotations.*;
+
+<span class="nc" id="L12">public class TestNG {</span>
+		
+	@DataProvider(name = &quot;students&quot;)
+    public Object[][] parameterProvider() {
+<span class="nc" id="L16">      return new Object[][] {</span>
+<span class="nc" id="L17">              {26, new Student[] { new Student(&quot;Sergey&quot;, &quot;Nasedkin&quot;, 20), new Student(&quot;Ivan&quot;, &quot;Nesterov&quot;, 40),  new Student(&quot;Gleb&quot;, &quot;Petrov&quot;, 20) }}</span>
+      };
+    }
+	@Test(dataProvider = &quot;students&quot;)
+    public void avgAgeTest(int expected, Student[] students) {
+<span class="nc" id="L22">      assertEquals(expected, Student.avgAge(students));</span>
+<span class="nc" id="L23">    }</span>
+	
+	@Test
+	 @Parameters({&quot;s1&quot;, &quot;s2&quot;, &quot;s3&quot;})
+	 public void TestNG_AgeAvg(@Optional(&quot;0&quot;)int s1, @Optional(&quot;0&quot;)int s2, @Optional(&quot;0&quot;)int s3) {
+<span class="nc" id="L28">	  Student p = new Student();</span>
+<span class="nc" id="L29">	  Student c = new Student();</span>
+<span class="nc" id="L30">	  Student d = new Student();</span>
+	 
+<span class="nc" id="L32">	  Student [] array = {p,c,d};</span>
+<span class="nc" id="L33">	   p.setAge(s1);</span>
+<span class="nc" id="L34">	  c.setAge(s2);</span>
+<span class="nc" id="L35">	  d.setAge(s3);</span>
+	  
+<span class="nc" id="L37">	  int expectedAge = 26;</span>
+<span class="nc" id="L38">	  int actualsAge = Student.avgAge(array);</span>
+	  
+<span class="nc" id="L40">	  assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L41">	 }</span>
+	}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>TestNGFactory (20 февр. 2022 г. 15:08:07)</div></body></html>

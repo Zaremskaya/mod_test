@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ParamTest1.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestNGFactory (20 февр. 2022 г. 15:08:07)</a> &gt; <a href="../../index.html" class="el_group">TestJUnit</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ParamTest1.java</span></div><h1>ParamTest1.java</h1><pre class="source lang-java linenums">import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
+import org.junit.jupiter.params.provider.CsvSource;
+
+	
+<span class="nc" id="L15">class ParamTest1 {</span>
+	
+    
+	@ParameterizedTest
+	@Tag(&quot;positive&quot;)
+	@CsvSource(value = {&quot;20, 40, 20&quot;})
+	void testWithCsvSourse(ArgumentsAccessor argumentsAccessor) {
+<span class="nc" id="L22">	Student [] array = {new Student(),new Student(),new Student()}  ;</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">	for(int i=0; i&lt;3;i++) {</span>
+<span class="nc" id="L24">	array[i].setAge(argumentsAccessor.get(i, Integer.class));</span>
+	}
+<span class="nc" id="L26">	int expectedAge = 40;</span>
+<span class="nc" id="L27">	int actualsAge = Student.avgAge(array);</span>
+<span class="nc" id="L28">	assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L29">	}</span>
+	
+	
+	@TestFactory
+	@Tag(&quot;positive&quot;)
+	Stream&lt;DynamicTest&gt; dynamicTestsGetters() {
+
+<span class="nc" id="L36">	    Student[] studentsObjects = {new Student(&quot;nicola&quot;,&quot;Petrow-Ivanov&quot;, 18), new Student(&quot;ivan&quot;, &quot;gudkov&quot;, 45), new Student(&quot;dmITRiy&quot;, &quot;puPKov&quot;, 50)};</span>
+
+<span class="nc" id="L38">	    String[] firstNameTest = {&quot;Nicola&quot;, &quot;Ivan&quot;, &quot;Dmitriy&quot;};</span>
+<span class="nc" id="L39">	    String[] lastNameTest = {&quot;Petrow-Ivanov&quot;, &quot;Gudkov&quot;, &quot;Pupkov&quot;};</span>
+<span class="nc" id="L40">	    Integer[] ageTest = {18, 45, 50};</span>
+	    
+<span class="nc" id="L42">	    List&lt;DynamicTest&gt; dynamicTests = new ArrayList&lt;DynamicTest&gt;();</span>
+
+<span class="nc bnc" id="L44" title="All 2 branches missed.">	    for (int i = 0; i &lt; studentsObjects.length; i++) {</span>
+<span class="nc" id="L45">	    	int k = i;</span>
+<span class="nc" id="L46">	        DynamicTest dynamicTestFirstName = DynamicTest.dynamicTest(&quot;DynamicTest getFirstName(&quot; + firstNameTest[k] + &quot;)&quot;, </span>
+<span class="nc" id="L47">	        		() -&gt; {assertEquals(firstNameTest[k], studentsObjects[k].getFirstName());</span>
+<span class="nc" id="L48">	        });</span>
+<span class="nc" id="L49">	        DynamicTest dynamicTestLastName = DynamicTest.dynamicTest(&quot;DynamicTest getLastName(&quot; + lastNameTest[k] + &quot;)&quot;, () -&gt; {</span>
+<span class="nc" id="L50">	            assertEquals(lastNameTest[k], studentsObjects[k].getLastName());</span>
+<span class="nc" id="L51">	        });</span>
+<span class="nc" id="L52">	        DynamicTest dynamicTestAge = DynamicTest.dynamicTest(&quot;DynamicTest getAge(&quot; + ageTest[k] + &quot;)&quot;, () -&gt; {</span>
+<span class="nc" id="L53">	            assertEquals(ageTest[k], studentsObjects[k].getAge());</span>
+<span class="nc" id="L54">	        });</span>
+
+<span class="nc" id="L56">	        dynamicTests.add(dynamicTestFirstName);</span>
+<span class="nc" id="L57">	        dynamicTests.add(dynamicTestLastName);</span>
+<span class="nc" id="L58">	        dynamicTests.add(dynamicTestAge);</span>
+	    }
+<span class="nc" id="L60">	    return dynamicTests.stream();</span>
+	}
+	
+	@TestFactory
+	@Tag(&quot;negative&quot;)
+	Stream&lt;DynamicTest&gt; dynamicTestsGetters1() {
+
+<span class="nc" id="L67">	    Student[] studentsObjects = {new Student(&quot; igor&quot;,&quot; ivanov&quot;, -8), new Student(&quot;3slava&quot;, &quot;5sidorov&quot;, 51)};</span>
+
+<span class="nc" id="L69">	    String[] firstNameTest = {&quot;Igor&quot;, &quot;Slava&quot;};</span>
+<span class="nc" id="L70">	    String[] lastNameTest = {&quot;Ivanov&quot;, &quot;Sidorov&quot;};</span>
+<span class="nc" id="L71">	    Integer[] ageTest = {18, 18};</span>
+	    
+<span class="nc" id="L73">	    List&lt;DynamicTest&gt; dynamicTests = new ArrayList&lt;DynamicTest&gt;();</span>
+
+<span class="nc bnc" id="L75" title="All 2 branches missed.">	    for (int i = 0; i &lt; studentsObjects.length; i++) {</span>
+<span class="nc" id="L76">	    	int k = i;</span>
+<span class="nc" id="L77">	        DynamicTest dynamicTestFirstName = DynamicTest.dynamicTest(&quot;DynamicTest getFirstName(&quot; + firstNameTest[k] + &quot;)&quot;, </span>
+<span class="nc" id="L78">	        		() -&gt; {assertEquals(firstNameTest[k], studentsObjects[k].getFirstName());</span>
+<span class="nc" id="L79">	        });</span>
+<span class="nc" id="L80">	        DynamicTest dynamicTestLastName = DynamicTest.dynamicTest(&quot;DynamicTest getLastName(&quot; + lastNameTest[k] + &quot;)&quot;, () -&gt; {</span>
+<span class="nc" id="L81">	            assertEquals(lastNameTest[k], studentsObjects[k].getLastName());</span>
+<span class="nc" id="L82">	        });</span>
+<span class="nc" id="L83">	        DynamicTest dynamicTestAge = DynamicTest.dynamicTest(&quot;DynamicTest getAge(&quot; + ageTest[k] + &quot;)&quot;, () -&gt; {</span>
+<span class="nc" id="L84">	            assertEquals(ageTest[k], studentsObjects[k].getAge());</span>
+<span class="nc" id="L85">	        });</span>
+
+<span class="nc" id="L87">	        dynamicTests.add(dynamicTestFirstName);</span>
+<span class="nc" id="L88">	        dynamicTests.add(dynamicTestLastName);</span>
+<span class="nc" id="L89">	        dynamicTests.add(dynamicTestAge);</span>
+	    }
+<span class="nc" id="L91">	    return dynamicTests.stream();</span>
+	}
+}
+	
+	
+	
+	
+	
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>TestNGFactory (20 февр. 2022 г. 15:08:07)</div></body></html>

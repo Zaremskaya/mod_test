@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CustomListener.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestNGFactory (20 февр. 2022 г. 15:08:07)</a> &gt; <a href="../../index.html" class="el_group">TestJUnit</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">CustomListener.java</span></div><h1>CustomListener.java</h1><pre class="source lang-java linenums">import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+<span class="nc" id="L5">public class CustomListener implements ITestListener{</span>
+@Override
+public void onTestStart(ITestResult result) {
+	
+<span class="nc" id="L9">}</span>
+@Override
+public void onStart(ITestContext context) {
+	
+<span class="nc" id="L13">}</span>
+@Override
+public void onFinish(ITestContext context) {
+<span class="nc" id="L16">	System.out.println(&quot;Колличество успешных тестов: &quot; + context.getPassedTests().getAllResults().size());</span>
+<span class="nc" id="L17">	System.out.println(&quot;Колличество упавших тестов: &quot; + context.getFailedTests().getAllResults().size());</span>
+
+<span class="nc" id="L19">}</span>
+@Override
+public void onTestSuccess(ITestResult result) {
+<span class="nc" id="L22">	System.out.println(&quot;Успешные тесты: &quot; + result.getName());</span>
+<span class="nc" id="L23">}</span>
+@Override
+public void onTestFailure(ITestResult result) {
+<span class="nc" id="L26">	System.out.println(&quot;Провальные тесты: &quot; + result.getName());</span>
+<span class="nc" id="L27">}</span>
+@Override
+public void onTestSkipped(ITestResult result) {
+<span class="nc" id="L30">	System.out.println(&quot;Пропущенные тесты: &quot; + result.getName());</span>
+<span class="nc" id="L31">}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>TestNGFactory (20 февр. 2022 г. 15:08:07)</div></body></html>

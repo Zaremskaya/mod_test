@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestNGFactory (20 февр. 2022 г. 15:08:07)</a> &gt; <a href="../../index.html" class="el_group">TestJUnit</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">StudentTest.java</span></div><h1>StudentTest.java</h1><pre class="source lang-java linenums">
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+
+@Execution(ExecutionMode.CONCURRENT)
+<span class="nc" id="L12">public class StudentTest {</span>
+	
+<span class="nc" id="L14">	private static final Class&lt;?&gt;[] Age = null;</span>
+<span class="nc" id="L15">	private Student s = new Student();	 	   </span>
+   
+      @Test
+	  @Order(2)
+	  @Tag(&quot;positive&quot;)
+	  void testAge18() {
+<span class="nc" id="L21">		int age = 18;</span>
+<span class="nc" id="L22">		s.setAge(age);</span>
+<span class="nc" id="L23">	    int expectedAge = 18;</span>
+<span class="nc" id="L24">	    int actualsAge=s.getAge();</span>
+<span class="nc" id="L25">	    assertEquals(expectedAge, actualsAge);	</span>
+<span class="nc" id="L26">	  }</span>
+	  @Test
+	  @Order(1)
+	  @Tag(&quot;positive&quot;)
+	  void testAge45() {
+<span class="nc" id="L31">		int age = 45;</span>
+<span class="nc" id="L32">		s.setAge(age);</span>
+<span class="nc" id="L33">	    int expectedAge = 45;</span>
+<span class="nc" id="L34">	    int actualsAge=s.getAge();</span>
+<span class="nc" id="L35">	    assertEquals(expectedAge, actualsAge);	</span>
+<span class="nc" id="L36">	  }</span>
+	  
+	
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testAge50() {
+<span class="nc" id="L42">		int age = 50;</span>
+<span class="nc" id="L43">		s.setAge(age);</span>
+<span class="nc" id="L44">	    int expectedAge = 50;</span>
+<span class="nc" id="L45">	    int actualsAge=s.getAge();</span>
+<span class="nc" id="L46">	    assertEquals(expectedAge, actualsAge);	</span>
+<span class="nc" id="L47">	  }</span>
+	  
+	  @Test
+	  @Tag(&quot;negative&quot;)
+	  void testAgeInvalidMinus8() {
+<span class="nc" id="L52">		int age = -8;</span>
+<span class="nc" id="L53">		s.setAge(age);</span>
+<span class="nc" id="L54">		int expectedAge = 18;</span>
+<span class="nc" id="L55">	    int actualsAge=s.getAge(); </span>
+<span class="nc" id="L56">	    assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L57">	  }</span>
+	 
+	  @Test
+	  @Tag(&quot;negative&quot;)
+	  void testAgeInvalid51() {
+<span class="nc" id="L62">		int age = 51;</span>
+<span class="nc" id="L63">		s.setAge(age);</span>
+<span class="nc" id="L64">		int expectedAge = 18;</span>
+<span class="nc" id="L65">	    int actualsAge=s.getAge(); </span>
+<span class="nc" id="L66">	    assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L67">	  }</span>
+	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testLastName() {
+<span class="nc" id="L72">			String fio = &quot;������-������&quot;;</span>
+<span class="nc" id="L73">			s.setLastName(fio);</span>
+<span class="nc" id="L74">			String expectedName = &quot;������-������&quot;;</span>
+<span class="nc" id="L75">			String actualsName=s.getLastName();</span>
+<span class="nc" id="L76">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L77">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testLastName1() {
+<span class="nc" id="L82">			String fio = &quot;������&quot;;</span>
+<span class="nc" id="L83">			s.setLastName(fio);</span>
+<span class="nc" id="L84">			String expectedName = &quot;������&quot;;</span>
+<span class="nc" id="L85">			String actualsName=s.getLastName();</span>
+<span class="nc" id="L86">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L87">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testLastName2() {
+<span class="nc" id="L92">			String fio = &quot;������&quot;;</span>
+<span class="nc" id="L93">			s.setLastName(fio);</span>
+<span class="nc" id="L94">			String expectedName = &quot;������&quot;;</span>
+<span class="nc" id="L95">			String actualsName=s.getLastName();</span>
+<span class="nc" id="L96">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L97">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;negative&quot;)
+	  void testLastName3() {
+<span class="nc" id="L102">			String fio = &quot; ������&quot;;</span>
+<span class="nc" id="L103">			s.setLastName(fio);</span>
+<span class="nc" id="L104">			String expectedName = &quot; ������&quot;;</span>
+<span class="nc" id="L105">			String actualsName=s.getLastName();</span>
+<span class="nc" id="L106">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L107">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;negative&quot;)
+	  void testLastName4() {
+<span class="nc" id="L112">			String fio = &quot;3������&quot;;</span>
+<span class="nc" id="L113">			s.setLastName(fio);</span>
+<span class="nc" id="L114">			String expectedName = &quot;3������&quot;;</span>
+<span class="nc" id="L115">			String actualsName=s.getLastName();</span>
+<span class="nc" id="L116">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L117">		  }</span>
+	  	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testFirstName() {
+<span class="nc" id="L122">			String name = &quot;���������&quot;;</span>
+<span class="nc" id="L123">			s.setFirstName(name);</span>
+<span class="nc" id="L124">			String expectedName = &quot;���������&quot;;</span>
+<span class="nc" id="L125">			String actualsName=s.getFirstName();</span>
+<span class="nc" id="L126">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L127">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testFirstName1() {
+<span class="nc" id="L132">			String name = &quot;���������&quot;;</span>
+<span class="nc" id="L133">			s.setFirstName(name);</span>
+<span class="nc" id="L134">			String expectedName = &quot;���������&quot;;</span>
+<span class="nc" id="L135">			String actualsName=s.getFirstName();</span>
+<span class="nc" id="L136">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L137">		  }</span>
+	  
+	  @Test
+	  @Tag(&quot;positive&quot;)
+	  void testFirstName2() {
+<span class="nc" id="L142">			String name = &quot;����-��������&quot;;</span>
+<span class="nc" id="L143">			s.setFirstName(name);</span>
+<span class="nc" id="L144">			String expectedName = &quot;����-��������&quot;;</span>
+<span class="nc" id="L145">			String actualsName=s.getFirstName();</span>
+<span class="nc" id="L146">		    assertEquals(expectedName, actualsName);	</span>
+<span class="nc" id="L147">		  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>TestNGFactory (20 февр. 2022 г. 15:08:07)</div></body></html>
