@@ -1,0 +1,35 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Allure.allure.Allure",
+    "children" : [ {
+      "name" : "calculatepercent1",
+      "uid" : "8c59ee7e743fd218",
+      "parentUid" : "36ae854a043e7be9030c73b7dbd44bf1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1653014266314,
+        "stop" : 1653014268043,
+        "duration" : 1729
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "calculatepercent2",
+      "uid" : "f8faf6b2cbe05b93",
+      "parentUid" : "36ae854a043e7be9030c73b7dbd44bf1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1653014268125,
+        "stop" : 1653014269734,
+        "duration" : 1609
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "Allure.allure.Allure"
+  } ]
+}

@@ -1,0 +1,21 @@
+[ {
+  "uid" : "f8faf6b2cbe05b93",
+  "name" : "calculatepercent2()",
+  "time" : {
+    "start" : 1653014268125,
+    "stop" : 1653014269734,
+    "duration" : 1609
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8c59ee7e743fd218",
+  "name" : "calculatepercent1()",
+  "time" : {
+    "start" : 1653014266314,
+    "stop" : 1653014268043,
+    "duration" : 1729
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,35 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Allure.allure.Allure",
+    "children" : [ {
+      "name" : "calculatepercent1()",
+      "uid" : "8c59ee7e743fd218",
+      "parentUid" : "722f8113077d3c93ca883f68ca68593a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1653014266314,
+        "stop" : 1653014268043,
+        "duration" : 1729
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "calculatepercent2()",
+      "uid" : "f8faf6b2cbe05b93",
+      "parentUid" : "722f8113077d3c93ca883f68ca68593a",
+      "status" : "failed",
+      "time" : {
+        "start" : 1653014268125,
+        "stop" : 1653014269734,
+        "duration" : 1609
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "722f8113077d3c93ca883f68ca68593a"
+  } ]
+}
